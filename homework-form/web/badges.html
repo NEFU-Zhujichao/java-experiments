@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet">
+    <style>
+        .badge{
+            width: 300px;
+            height: 300px;
+            margin: 200px auto;
+            display: flex;
+            position: relative;
+        }
+        .badge-content{
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+        .material-icons {
+            font-size: 100px;
+            color: dodgerblue;
+        }
+        .badge-wrapper{
+            position: absolute;
+            background: red;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            text-align: center;
+            top: 47px;
+            left: 110px;
+        }
+        .badge-space{
+            position: absolute;
+            width: 45px;
+            height: 45px;
+            top: 50px;
+            left: 105px;
+            border-radius: 50%;
+            background: white;
+        }
+        .badge-wrapper span{
+            color: white;
+            font-size: 30px;
+            width: 50%;
+            height: 50%;
+        }
+    </style>
+</head>
+<body>
+<div class="badge">
+
+    <div class="badge-content">
+        <i class="material-icons">bug_report</i>
+    </div>
+    <div class="badge-space"></div>
+    <div class="badge-wrapper">
+        <span>12</span>
+    </div>
+</div>
+</body>
+</html>

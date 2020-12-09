@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main input[type=text]{
+            padding: 5px;
+        }
+        .main input[type=password]{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+<form action="/register" method="post">
+    <div class="main">
+        <h1>个人信息</h1>
+        <div>
+            <label for="username">用户名：<input type="text" id="username" required></label>
+        </div>
+
+        <div>
+            <label for="password">密码：<input type="password" id="password" required></label>
+        </div>
+
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" name="sex">男</label>
+            <label><input type="radio" name="sex">女</label>
+        </div>
+
+        <div>
+            <label>生日：</label>
+            <input type="datetime-local" required>
+        </div>
+
+        <div>
+            <label>籍贯：</label>
+            <input list="location">
+            <datalist id="location">
+                <option>乌兰浩特</option>
+                <option>哈尔滨</option>
+                <option>阿尔山</option>
+            </datalist>
+        </div>
+
+        <div>
+            <label>学历：</label>
+            <select name="grade">
+                <option selected>学士</option>
+                <option>硕士</option>
+                <option>博士</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="others">
+        <h1>其他信息</h1>
+        <p>喜欢的课程：</p>
+        <div>
+            <ul>
+                <li><label><input type="checkbox" checked>Web开发技术</label></li>
+                <li><label><input type="checkbox">Java语言程序设计</label></li>
+                <li><label><input type="checkbox">数据库原理</label></li>
+                <li><label><input type="checkbox">系统分析与测试</label></li>
+            </ul>
+        </div>
+
+        <div>
+            <label>照片：</label>
+            <input type="file" accept=".png, .jpg">
+        </div>
+
+        <div>
+            <button type="submit">提交</button>
+            <button type="reset">重置</button>
+        </div>
+    </div>
+</form>
+</body>
+</html>

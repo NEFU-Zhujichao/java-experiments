@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/material-design-icons/3.0.1/iconfont/material-icons.css" rel="stylesheet">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <style>
+        .fab{
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            text-align: center;
+        }
+        .fab-btn .material-icons{
+            font-size: 80px;
+            color: dodgerblue;
+            transition: 1s;
+        }
+        .fab-menu{
+            display: flex;
+            flex-direction: column;
+        }
+        .item{
+            display: none;
+        }
+        .item .material-icons{
+            color: orange;
+            font-size: 50px;
+        }
+        .fab:hover .fab-btn .material-icons{
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+<div class="fab">
+
+    <div class="fab-btn">
+        <i class="material-icons">account_box</i>
+    </div>
+
+    <div class="fab-menu">
+        <div class="item"><i class="material-icons">airplanemode_active</i></div>
+        <div class="item"><i class="material-icons">battery_full</i></div>
+        <div class="item"><i class="material-icons">bluetooth</i></div>
+    </div>
+</div>
+<script>
+    $(".fab").hover(function (){
+        let item = $(".item");
+        item.fadeIn(500)
+        let fm = $(".fab-btn .material-icons");
+        fm.html("add_box")
+    },function (){
+        let item = $(".item");
+        item.fadeOut(500)
+        let fm = $(".fab-btn .material-icons");
+        fm.html("account_box")
+    })
+</script>
+</body>
+</html>
