@@ -1,17 +1,19 @@
 package com.example.experiment1.BuilderPattern;
 
+import java.util.logging.Logger;
+
 public class BuilderPatternTest {
     public static void main(String[] args) {
         Director director = new Director();
-        OlderMobileBuilder olderMobileBuilder = new OlderMobileBuilder();
-        CameraPhoneBuilder cameraPhoneBuilder = new CameraPhoneBuilder();
-        FlagPhoneBuilder flagPhoneBuilder = new FlagPhoneBuilder();
-        director.construct(olderMobileBuilder);
-        director.construct(cameraPhoneBuilder);
-        director.construct(flagPhoneBuilder);
-        Phone olderMobile = olderMobileBuilder.build();
-        Phone cameraPhone = cameraPhoneBuilder.build();
-        Phone flagPhone = flagPhoneBuilder.build();
+        OldMachineBuilder oldMachineBuilder = new OldMachineBuilder();
+        PhotoLoversPhoneBuilder photoLoversPhoneBuilder = new PhotoLoversPhoneBuilder();
+        FlagshipPhoneBuilder flagshipPhoneBuilder = new FlagshipPhoneBuilder();
+        director.construct(oldMachineBuilder);
+        director.construct(photoLoversPhoneBuilder);
+        director.construct(flagshipPhoneBuilder);
+        Phone olderMobile = oldMachineBuilder.build();
+        Phone cameraPhone = photoLoversPhoneBuilder.build();
+        Phone flagPhone = flagshipPhoneBuilder.build();
         System.out.println(olderMobile);
         System.out.println(cameraPhone);
         System.out.println(flagPhone);

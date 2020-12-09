@@ -1,6 +1,6 @@
 package com.example.experiment1.BuilderPattern;
 
-public class FlagPhoneBuilder implements PhoneBuilder{
+public class FlagshipPhoneBuilder extends PhoneBuilder{
     private Phone phone = new Phone();
     @Override
     public void buildCPU() {
@@ -21,7 +21,7 @@ public class FlagPhoneBuilder implements PhoneBuilder{
 
     @Override
     public void buildScreen() {
-        phone.setScreen("可以触屏屏幕");
+        phone.setScreen("触控屏幕");
 
     }
 

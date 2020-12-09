@@ -1,10 +1,10 @@
 package com.example.experiment1.BuilderPattern;
 
-public class OlderMobileBuilder implements PhoneBuilder{
+public class OldMachineBuilder extends PhoneBuilder{
     private Phone phone = new Phone();
     @Override
     public void buildCPU() {
-        phone.setCPU("老年CPU");
+        phone.setCPU("低配CPU");
     }
 
     @Override
@@ -14,12 +14,12 @@ public class OlderMobileBuilder implements PhoneBuilder{
 
     @Override
     public void buildBattery() {
-        phone.setBattery("锂电池");
+        phone.setBattery("较长待机");
     }
 
     @Override
     public void buildScreen() {
-        phone.setScreen("不可触屏屏幕");
+        phone.setScreen("不是触控屏幕");
     }
 
     @Override

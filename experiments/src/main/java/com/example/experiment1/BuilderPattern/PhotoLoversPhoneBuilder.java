@@ -1,6 +1,6 @@
 package com.example.experiment1.BuilderPattern;
 
-public class CameraPhoneBuilder implements PhoneBuilder{
+public class PhotoLoversPhoneBuilder extends PhoneBuilder{
     private Phone phone = new Phone();
     @Override
     public void buildCPU() {
@@ -15,19 +15,19 @@ public class CameraPhoneBuilder implements PhoneBuilder{
 
     @Override
     public void buildBattery() {
-        phone.setBattery("进口电池");
+        phone.setBattery("较长待机");
 
     }
 
     @Override
     public void buildScreen() {
-        phone.setScreen("可以触屏屏幕");
+        phone.setScreen("触控屏幕");
 
     }
 
     @Override
     public void buildCamera() {
-        phone.setCamera("索尼相机");
+        phone.setCamera("1800W超高像素");
 
     }
 
