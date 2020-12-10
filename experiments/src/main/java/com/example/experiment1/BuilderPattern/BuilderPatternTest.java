@@ -1,7 +1,5 @@
 package com.example.experiment1.BuilderPattern;
 
-import java.util.logging.Logger;
-
 public class BuilderPatternTest {
     public static void main(String[] args) {
         Director director = new Director();
