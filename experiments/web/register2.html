@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>注册</h1>
+    <div><label><input type="checkbox" id="legal">我已阅读相关说明并遵守相关法律</label></div>
+<form action="/register">
+    <div>
+        用户名:<input type="text" name="username" disabled>
+    </div>
+    <div>
+        <input type="hidden">
+        未来意向：<label><input type="radio" name="future" value="0" disabled>Java工程师</label>
+        <label><input type="radio" name="future" value="1" disabled>测试工程师</label>
+        <label><input type="radio" name="future" value="2" disabled>前端工程师</label>
+    </div>
+    <div>
+        <p>请从以下课程中选择2项最喜欢的课程</p>
+        <ul>
+            <li><label><input type="checkbox" name="course" disabled>Web开发技术</label></li>
+            <li><label><input type="checkbox" name="course" disabled>软件项目管理</label></li>
+            <li><label><input type="checkbox" name="course" disabled>数据库原理</label></li>
+            <li><label><input type="checkbox" name="course" disabled>系统分析与设计</label></li>
+        </ul>
+    </div>
+    <div>
+        <p>地址：</p>
+        <ul>
+        </ul>
+        <input type="text" disabled>
+        <button type="button" disabled id="addAddress">添加地址</button>
+    </div>
+    <div>
+        <button type="submit" disabled id="submit">提交</button>
+    </div>
+</form>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(function (){
+        let inputs = $("input");
+        let state = false;
+        let courses = $("input[name=course]");
+        const amount = 2;
+        let tag = false;
+        let submitTag = false;
+        $("#legal").click(function (){
+            inputs.not(this).prop("disabled",state);
+            $("#addAddress").prop("disabled",state);
+            state = !state;
+        })
+        $("input[name=username]").change(function (){
+            let val = $(this).val();
+            if (val.trim().length < 6){
+                tag = false
+                alert("用户名长度必须大于等于6")
+            }
+            else tag = true;
+        })
+        $("input[type=radio]").click(function (){
+            let flag = $("input[type=hidden]").val() === $(this).val();
+            if (flag == true){
+                $(this).prop("checked",!flag)
+                $("input[type=hidden]").val("")
+            }
+            else {
+                $("input[type=hidden]").val($(this).val())
+            }
+        })
+        courses.click(function (){
+            let courseStatus =  courses.filter(":checked").length >= amount;
+            courses.not(courses.filter(":checked")).prop("disabled",courseStatus);
+            submitTag = courseStatus;
+        })
+
+        $("#addAddress").click(function (){
+            let prev = $(this).prev();
+            let str = $(`<li>${prev.val()}</li>`);
+            prev.val("")
+            prev.prev().css("display","none");
+            prev.prev().append(str).fadeIn(2000);
+            str.fadeIn(2000);
+        })
+
+        $("input[name=username],input[name=course]").change(() => {
+            if ((tag == true) && (courses.filter(":checked").length >= 2)){
+                $("#submit").prop("disabled",false);
+            }
+            else $("#submit").prop("disabled",true);
+        })
+    })
+</script>
+</body>
+</html>
